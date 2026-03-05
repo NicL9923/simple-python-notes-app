@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 from pathlib import Path
 
 from backend.models import NoteCreate, NoteUpdate, NoteOut, AIResult
@@ -72,3 +73,6 @@ async def serve_favicon():
 @app.get("/")
 async def serve_index():
     return FileResponse(STATIC_DIR / "index.html")
+
+
+app.mount("/", StaticFiles(directory=STATIC_DIR), name="static")
