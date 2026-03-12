@@ -5,6 +5,7 @@ A template app ready to deploy on [Embr](https://portal.embrdev.io). FastAPI bac
 ## Deploy to Embr
 
 This repo includes a [`build.yaml`](build.yaml) that tells Embr how to build and run the app:
+test
 
 ```yaml
 version: 1
